@@ -1,0 +1,15 @@
+# Optional local PostgreSQL for development
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: clubmedia
+      POSTGRES_PASSWORD: clubmedia
+      POSTGRES_DB: event_media
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
